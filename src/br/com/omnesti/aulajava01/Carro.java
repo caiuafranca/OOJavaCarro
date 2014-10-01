@@ -19,6 +19,8 @@ public class Carro {
 			if (this.marcha == 0){
 				this.ligado = true;
 				System.out.println("RUMMMMM....Carro Ligado!");
+				System.out.println("Selecione o Destino ou Dirija Manualmente!");
+				
 			}else{
 				 System.out.println("Verifique a Marcha do Carro Antes de Ligar");
 			}
@@ -28,25 +30,30 @@ public class Carro {
 	}
 	
 	public void acelerar(int velocidade){
-		if((ligado == true) && (velocidade == 0)){
-			System.out.println("O Carro esta Parado");
-			trocarMarcha(0);
-		} else if(velocidade <= 20){
-			System.out.println("Passando a 1 Marcha");
-			trocarMarcha(1);
-		} else if(velocidade > 20 && velocidade <= 40){
-			System.out.println("Passando a 2 Marcha");
-			trocarMarcha(2);
-		} else if (velocidade > 40 && velocidade <= 70){
-			System.out.println("Passando a 3 Marcha");
-			trocarMarcha(3);
-		}else if (velocidade > 70 && velocidade <= 80){
-			System.out.println("Passando a 4 Marcha");
-			trocarMarcha(4);
-		}else if (velocidade > 80 && velocidade <= 100){
-			System.out.println("Passando a 5 Marcha");
-			trocarMarcha(5);
+		if(this.ligado){
+			if(velocidade == 0){
+				System.out.println("O Carro esta Parado");
+				trocarMarcha(0);
+			} else if(velocidade <= 20){
+				System.out.println("Passando a 1 Marcha");
+				trocarMarcha(1);
+			} else if(velocidade > 20 && velocidade <= 40){
+				System.out.println("Passando a 2 Marcha");
+				trocarMarcha(2);
+			} else if (velocidade > 40 && velocidade <= 70){
+				System.out.println("Passando a 3 Marcha");
+				trocarMarcha(3);
+			}else if (velocidade > 70 && velocidade <= 80){
+				System.out.println("Passando a 4 Marcha");
+				trocarMarcha(4);
+			}else if (velocidade > 80 && velocidade <= 100){
+				System.out.println("Passando a 5 Marcha");
+				trocarMarcha(5);
+			}
+		}else{
+			System.out.println("Para Acelerar Ligue o Carro");
 		}
+		
 	}
 	
 	private void trocarMarcha(int marcha){
